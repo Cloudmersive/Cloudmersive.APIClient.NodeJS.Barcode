@@ -36,7 +36,7 @@
   /**
    * The BarcodeLookupResponse model module.
    * @module model/BarcodeLookupResponse
-   * @version 1.0.8
+   * @version 1.0.9
    */
 
   /**

@@ -1,4 +1,5 @@
 ﻿Remove-Item –path ./client –recurse
 & java -jar swagger-codegen-cli.jar generate -i https://api.cloudmersive.com/swagger/api/barcode -l javascript -o client -c packageconfig.json
 #(Get-Content ./client/package.json).replace('v1', '1.0.1') | Set-Content ./client/package.json
+(Get-Content ./client/src/api/GenerateBarcodeApi.js).replace('var returnType = Object;', "var returnType = 'Blob';") | Set-Content ./client/src/api/GenerateBarcodeApi.js
 & npm build ./client
