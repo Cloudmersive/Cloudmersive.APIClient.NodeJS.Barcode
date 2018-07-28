@@ -33,7 +33,7 @@
   /**
    * GenerateBarcode service.
    * @module api/GenerateBarcodeApi
-   * @version 1.0.9
+   * @version 1.1.0
    */
 
   /**
@@ -84,7 +84,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'];
       var accepts = ['image/png'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/barcode/generate/ean-13', 'POST',
@@ -130,7 +130,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'];
       var accepts = ['image/png'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/barcode/generate/ean-8', 'POST',
@@ -176,7 +176,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'];
       var accepts = ['image/png'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/barcode/generate/qrcode', 'POST',
@@ -222,7 +222,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'];
       var accepts = ['image/png'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/barcode/generate/upc-a', 'POST',
@@ -268,7 +268,7 @@
       var authNames = ['Apikey'];
       var contentTypes = ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'];
       var accepts = ['image/png'];
-      var returnType = File;
+      var returnType = 'Blob';
 
       return this.apiClient.callApi(
         '/barcode/generate/upc-e', 'POST',
