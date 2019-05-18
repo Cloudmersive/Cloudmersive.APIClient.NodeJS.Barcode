@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BarcodeLookupResponse', 'model/ProductMatch', 'api/BarcodeLookupApi', 'api/GenerateBarcodeApi'], factory);
+    define(['ApiClient', 'model/BarcodeLookupResponse', 'model/BarcodeScanResult', 'model/ProductMatch', 'api/BarcodeLookupApi', 'api/BarcodeScanApi', 'api/GenerateBarcodeApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/BarcodeLookupResponse'), require('./model/ProductMatch'), require('./api/BarcodeLookupApi'), require('./api/GenerateBarcodeApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/BarcodeLookupResponse'), require('./model/BarcodeScanResult'), require('./model/ProductMatch'), require('./api/BarcodeLookupApi'), require('./api/BarcodeScanApi'), require('./api/GenerateBarcodeApi'));
   }
-}(function(ApiClient, BarcodeLookupResponse, ProductMatch, BarcodeLookupApi, GenerateBarcodeApi) {
+}(function(ApiClient, BarcodeLookupResponse, BarcodeScanResult, ProductMatch, BarcodeLookupApi, BarcodeScanApi, GenerateBarcodeApi) {
   'use strict';
 
   /**
@@ -67,6 +67,11 @@
      */
     BarcodeLookupResponse: BarcodeLookupResponse,
     /**
+     * The BarcodeScanResult model constructor.
+     * @property {module:model/BarcodeScanResult}
+     */
+    BarcodeScanResult: BarcodeScanResult,
+    /**
      * The ProductMatch model constructor.
      * @property {module:model/ProductMatch}
      */
@@ -76,6 +81,11 @@
      * @property {module:api/BarcodeLookupApi}
      */
     BarcodeLookupApi: BarcodeLookupApi,
+    /**
+     * The BarcodeScanApi service constructor.
+     * @property {module:api/BarcodeScanApi}
+     */
+    BarcodeScanApi: BarcodeScanApi,
     /**
      * The GenerateBarcodeApi service constructor.
      * @property {module:api/GenerateBarcodeApi}
