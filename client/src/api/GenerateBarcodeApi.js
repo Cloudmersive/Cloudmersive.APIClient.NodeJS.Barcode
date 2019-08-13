@@ -33,7 +33,7 @@
   /**
    * GenerateBarcode service.
    * @module api/GenerateBarcodeApi
-   * @version 1.1.2
+   * @version 1.1.3
    */
 
   /**

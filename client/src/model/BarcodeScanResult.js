@@ -36,7 +36,7 @@
   /**
    * The BarcodeScanResult model module.
    * @module model/BarcodeScanResult
-   * @version 1.1.2
+   * @version 1.1.3
    */
 
   /**

@@ -33,7 +33,7 @@
   /**
    * BarcodeLookup service.
    * @module api/BarcodeLookupApi
-   * @version 1.1.2
+   * @version 1.1.3
    */
 
   /**

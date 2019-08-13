@@ -8,3 +8,9 @@
 & npm build ./client
 
 Copy-Item ./client/README.md ./README.md
+
+
+# Generate JS browser client
+
+# New-Item ./browser -ItemType "directory"
+# & browserify ./client/src/index.js ./browser/cloudmersive-barcode-browser-jsclient.js
