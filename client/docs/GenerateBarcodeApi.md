@@ -4,16 +4,18 @@ All URIs are relative to *https://api.cloudmersive.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateBarcodeEAN13**](GenerateBarcodeApi.md#generateBarcodeEAN13) | **POST** /barcode/generate/ean-13 | Validates and generate a EAN-13 barcode as a PNG file, a type of 1D barcode
-[**generateBarcodeEAN8**](GenerateBarcodeApi.md#generateBarcodeEAN8) | **POST** /barcode/generate/ean-8 | Validates and generate a EAN-8 barcode as a PNG file, a type of 1D barcode
-[**generateBarcodeQRCode**](GenerateBarcodeApi.md#generateBarcodeQRCode) | **POST** /barcode/generate/qrcode | Generate a QR code barcode as a PNG file, a type of 2D barcode which can encode free-form text information
-[**generateBarcodeUPCA**](GenerateBarcodeApi.md#generateBarcodeUPCA) | **POST** /barcode/generate/upc-a | Validate and generate a UPC-A barcode as a PNG file, a type of 1D barcode
-[**generateBarcodeUPCE**](GenerateBarcodeApi.md#generateBarcodeUPCE) | **POST** /barcode/generate/upc-e | Validates and generate a UPC-E barcode as a PNG file, a type of 1D barcode
+[**generateBarcodeEAN13**](GenerateBarcodeApi.md#generateBarcodeEAN13) | **POST** /barcode/generate/ean-13 | Generate a EAN-13 code barcode as PNG file
+[**generateBarcodeEAN8**](GenerateBarcodeApi.md#generateBarcodeEAN8) | **POST** /barcode/generate/ean-8 | Generate a EAN-8 code barcode as PNG file
+[**generateBarcodeQRCode**](GenerateBarcodeApi.md#generateBarcodeQRCode) | **POST** /barcode/generate/qrcode | Generate a QR code barcode as PNG file
+[**generateBarcodeUPCA**](GenerateBarcodeApi.md#generateBarcodeUPCA) | **POST** /barcode/generate/upc-a | Generate a UPC-A code barcode as PNG file
+[**generateBarcodeUPCE**](GenerateBarcodeApi.md#generateBarcodeUPCE) | **POST** /barcode/generate/upc-e | Generate a UPC-E code barcode as PNG file
 
 
 <a name="generateBarcodeEAN13"></a>
 # **generateBarcodeEAN13**
-> File generateBarcodeEAN13(value)
+> &#39;Blob&#39; generateBarcodeEAN13(value)
+
+Generate a EAN-13 code barcode as PNG file
 
 Validates and generate a EAN-13 barcode as a PNG file, a type of 1D barcode
 
@@ -51,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -60,11 +62,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
- - **Accept**: image/png
+ - **Accept**: application/octet-stream
 
 <a name="generateBarcodeEAN8"></a>
 # **generateBarcodeEAN8**
-> File generateBarcodeEAN8(value)
+> &#39;Blob&#39; generateBarcodeEAN8(value)
+
+Generate a EAN-8 code barcode as PNG file
 
 Validates and generate a EAN-8 barcode as a PNG file, a type of 1D barcode
 
@@ -102,7 +106,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -111,11 +115,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
- - **Accept**: image/png
+ - **Accept**: application/octet-stream
 
 <a name="generateBarcodeQRCode"></a>
 # **generateBarcodeQRCode**
-> File generateBarcodeQRCode(value)
+> &#39;Blob&#39; generateBarcodeQRCode(value)
+
+Generate a QR code barcode as PNG file
 
 Generate a QR code barcode as a PNG file, a type of 2D barcode which can encode free-form text information
 
@@ -153,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -162,11 +168,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
- - **Accept**: image/png
+ - **Accept**: application/octet-stream
 
 <a name="generateBarcodeUPCA"></a>
 # **generateBarcodeUPCA**
-> File generateBarcodeUPCA(value)
+> &#39;Blob&#39; generateBarcodeUPCA(value)
+
+Generate a UPC-A code barcode as PNG file
 
 Validate and generate a UPC-A barcode as a PNG file, a type of 1D barcode
 
@@ -204,7 +212,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -213,11 +221,13 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
- - **Accept**: image/png
+ - **Accept**: application/octet-stream
 
 <a name="generateBarcodeUPCE"></a>
 # **generateBarcodeUPCE**
-> File generateBarcodeUPCE(value)
+> &#39;Blob&#39; generateBarcodeUPCE(value)
+
+Generate a UPC-E code barcode as PNG file
 
 Validates and generate a UPC-E barcode as a PNG file, a type of 1D barcode
 
@@ -255,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**File**
+**&#39;Blob&#39;**
 
 ### Authorization
 
@@ -264,5 +274,5 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/xml, text/xml, application/x-www-form-urlencoded
- - **Accept**: image/png
+ - **Accept**: application/octet-stream
 

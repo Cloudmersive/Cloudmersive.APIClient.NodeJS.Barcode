@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**successful** | **Boolean** |  | [optional] 
-**matches** | [**[ProductMatch]**](ProductMatch.md) |  | [optional] 
+**successful** | **Boolean** | True if operation was successful, false otherwise | [optional] 
+**matches** | [**[ProductMatch]**](ProductMatch.md) | Resulting product matches for the input barcode | [optional] 
 
 
