@@ -1,5 +1,6 @@
 ﻿{
 
   "projectName" : "cloudmersive-barcodeapi-client",
-  "projectVersion": "1.1.4"
+  "projectVersion": "1.1.5",
+  "licenseName": "Apache-2.0"
 }  
