@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveBarcodeapiClient.BarcodeScanApi();
+    instance = new CloudmersiveBarcodeapiClient.BarcodeQRResultItem();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,27 +49,19 @@
       object[property] = value;
   }
 
-  describe('BarcodeScanApi', function() {
-    describe('barcodeScanImage', function() {
-      it('should call barcodeScanImage successfully', function(done) {
-        //uncomment below and update the code to test barcodeScanImage
-        //instance.barcodeScanImage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('BarcodeQRResultItem', function() {
+    it('should create an instance of BarcodeQRResultItem', function() {
+      // uncomment below and update the code to test BarcodeQRResultItem
+      //var instane = new CloudmersiveBarcodeapiClient.BarcodeQRResultItem();
+      //expect(instance).to.be.a(CloudmersiveBarcodeapiClient.BarcodeQRResultItem);
     });
-    describe('barcodeScanImageAdvancedQR', function() {
-      it('should call barcodeScanImageAdvancedQR successfully', function(done) {
-        //uncomment below and update the code to test barcodeScanImageAdvancedQR
-        //instance.barcodeScanImageAdvancedQR(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property rawText (base name: "RawText")', function() {
+      // uncomment below and update the code to test the property rawText
+      //var instane = new CloudmersiveBarcodeapiClient.BarcodeQRResultItem();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

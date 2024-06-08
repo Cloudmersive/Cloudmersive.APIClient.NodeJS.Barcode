@@ -5,7 +5,7 @@ Barcode APIs let you generate barcode images, and recognize values from images o
 [Cloudmersive Barcode API](https://www.cloudmersive.com/barcode-api) provides advanced barcode generation, lookup and recognition capabilities.
 
 - API version: v1
-- Package version: 1.1.5
+- Package version: 1.2.0
 
 
 ## Installation
@@ -127,6 +127,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CloudmersiveBarcodeapiClient.BarcodeLookupApi* | [**barcodeLookupEanLookup**](docs/BarcodeLookupApi.md#barcodeLookupEanLookup) | **POST** /barcode/lookup/ean | Lookup EAN barcode value, return product data
 *CloudmersiveBarcodeapiClient.BarcodeScanApi* | [**barcodeScanImage**](docs/BarcodeScanApi.md#barcodeScanImage) | **POST** /barcode/scan/image | Scan and recognize an image of a barcode
+*CloudmersiveBarcodeapiClient.BarcodeScanApi* | [**barcodeScanImageAdvancedQR**](docs/BarcodeScanApi.md#barcodeScanImageAdvancedQR) | **POST** /barcode/scan/image/advanced/qr | Advanced AI scan and recognition of an image of one or more QR barcodes
 *CloudmersiveBarcodeapiClient.GenerateBarcodeApi* | [**generateBarcodeEAN13**](docs/GenerateBarcodeApi.md#generateBarcodeEAN13) | **POST** /barcode/generate/ean-13 | Generate a EAN-13 code barcode as PNG file
 *CloudmersiveBarcodeapiClient.GenerateBarcodeApi* | [**generateBarcodeEAN8**](docs/GenerateBarcodeApi.md#generateBarcodeEAN8) | **POST** /barcode/generate/ean-8 | Generate a EAN-8 code barcode as PNG file
 *CloudmersiveBarcodeapiClient.GenerateBarcodeApi* | [**generateBarcodeQRCode**](docs/GenerateBarcodeApi.md#generateBarcodeQRCode) | **POST** /barcode/generate/qrcode | Generate a QR code barcode as PNG file
@@ -137,6 +138,8 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [CloudmersiveBarcodeapiClient.BarcodeLookupResponse](docs/BarcodeLookupResponse.md)
+ - [CloudmersiveBarcodeapiClient.BarcodeQRResultItem](docs/BarcodeQRResultItem.md)
+ - [CloudmersiveBarcodeapiClient.BarcodeScanQRAdvancedResult](docs/BarcodeScanQRAdvancedResult.md)
  - [CloudmersiveBarcodeapiClient.BarcodeScanResult](docs/BarcodeScanResult.md)
  - [CloudmersiveBarcodeapiClient.ProductMatch](docs/ProductMatch.md)
 

@@ -25,7 +25,7 @@
     if (!root.CloudmersiveBarcodeapiClient) {
       root.CloudmersiveBarcodeapiClient = {};
     }
-    root.CloudmersiveBarcodeapiClient.BarcodeScanResult = factory(root.CloudmersiveBarcodeapiClient.ApiClient);
+    root.CloudmersiveBarcodeapiClient.BarcodeQRResultItem = factory(root.CloudmersiveBarcodeapiClient.ApiClient);
   }
 }(this, function(ApiClient) {
   'use strict';
@@ -34,42 +34,33 @@
 
 
   /**
-   * The BarcodeScanResult model module.
-   * @module model/BarcodeScanResult
+   * The BarcodeQRResultItem model module.
+   * @module model/BarcodeQRResultItem
    * @version 1.2.0
    */
 
   /**
-   * Constructs a new <code>BarcodeScanResult</code>.
-   * Result of the barcode scan
-   * @alias module:model/BarcodeScanResult
+   * Constructs a new <code>BarcodeQRResultItem</code>.
+   * @alias module:model/BarcodeQRResultItem
    * @class
    */
   var exports = function() {
     var _this = this;
 
 
-
-
   };
 
   /**
-   * Constructs a <code>BarcodeScanResult</code> from a plain JavaScript object, optionally creating a new instance.
+   * Constructs a <code>BarcodeQRResultItem</code> from a plain JavaScript object, optionally creating a new instance.
    * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
    * @param {Object} data The plain JavaScript object bearing properties of interest.
-   * @param {module:model/BarcodeScanResult} obj Optional instance to populate.
-   * @return {module:model/BarcodeScanResult} The populated <code>BarcodeScanResult</code> instance.
+   * @param {module:model/BarcodeQRResultItem} obj Optional instance to populate.
+   * @return {module:model/BarcodeQRResultItem} The populated <code>BarcodeQRResultItem</code> instance.
    */
   exports.constructFromObject = function(data, obj) {
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('Successful')) {
-        obj['Successful'] = ApiClient.convertToType(data['Successful'], 'Boolean');
-      }
-      if (data.hasOwnProperty('BarcodeType')) {
-        obj['BarcodeType'] = ApiClient.convertToType(data['BarcodeType'], 'String');
-      }
       if (data.hasOwnProperty('RawText')) {
         obj['RawText'] = ApiClient.convertToType(data['RawText'], 'String');
       }
@@ -77,16 +68,6 @@
     return obj;
   }
 
-  /**
-   * True if the operation was successful, false otherwise
-   * @member {Boolean} Successful
-   */
-  exports.prototype['Successful'] = undefined;
-  /**
-   * The type of the barcode; possible values are AZTEC, CODABAR, CODE_39, CODE_93, CODE_128, DATA_MATRIX, EAN_8, EAN_13, ITF, MAXICODE, PDF_417, QR_CODE, RSS_14, RSS_EXPANDED, UPC_A, UPC_E, All_1D, UPC_EAN_EXTENSION, MSI, PLESSEY, IMB
-   * @member {String} BarcodeType
-   */
-  exports.prototype['BarcodeType'] = undefined;
   /**
    * The barcode text
    * @member {String} RawText

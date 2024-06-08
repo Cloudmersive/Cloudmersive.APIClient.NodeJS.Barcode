@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BarcodeLookupResponse', 'model/BarcodeScanResult', 'model/ProductMatch', 'api/BarcodeLookupApi', 'api/BarcodeScanApi', 'api/GenerateBarcodeApi'], factory);
+    define(['ApiClient', 'model/BarcodeLookupResponse', 'model/BarcodeQRResultItem', 'model/BarcodeScanQRAdvancedResult', 'model/BarcodeScanResult', 'model/ProductMatch', 'api/BarcodeLookupApi', 'api/BarcodeScanApi', 'api/GenerateBarcodeApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/BarcodeLookupResponse'), require('./model/BarcodeScanResult'), require('./model/ProductMatch'), require('./api/BarcodeLookupApi'), require('./api/BarcodeScanApi'), require('./api/GenerateBarcodeApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/BarcodeLookupResponse'), require('./model/BarcodeQRResultItem'), require('./model/BarcodeScanQRAdvancedResult'), require('./model/BarcodeScanResult'), require('./model/ProductMatch'), require('./api/BarcodeLookupApi'), require('./api/BarcodeScanApi'), require('./api/GenerateBarcodeApi'));
   }
-}(function(ApiClient, BarcodeLookupResponse, BarcodeScanResult, ProductMatch, BarcodeLookupApi, BarcodeScanApi, GenerateBarcodeApi) {
+}(function(ApiClient, BarcodeLookupResponse, BarcodeQRResultItem, BarcodeScanQRAdvancedResult, BarcodeScanResult, ProductMatch, BarcodeLookupApi, BarcodeScanApi, GenerateBarcodeApi) {
   'use strict';
 
   /**
@@ -53,7 +53,7 @@
    * </pre>
    * </p>
    * @module index
-   * @version 1.1.5
+   * @version 1.2.0
    */
   var exports = {
     /**
@@ -66,6 +66,16 @@
      * @property {module:model/BarcodeLookupResponse}
      */
     BarcodeLookupResponse: BarcodeLookupResponse,
+    /**
+     * The BarcodeQRResultItem model constructor.
+     * @property {module:model/BarcodeQRResultItem}
+     */
+    BarcodeQRResultItem: BarcodeQRResultItem,
+    /**
+     * The BarcodeScanQRAdvancedResult model constructor.
+     * @property {module:model/BarcodeScanQRAdvancedResult}
+     */
+    BarcodeScanQRAdvancedResult: BarcodeScanQRAdvancedResult,
     /**
      * The BarcodeScanResult model constructor.
      * @property {module:model/BarcodeScanResult}
