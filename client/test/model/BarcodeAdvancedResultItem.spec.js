@@ -30,7 +30,7 @@
   var instance;
 
   beforeEach(function() {
-    instance = new CloudmersiveBarcodeapiClient.BarcodeScanApi();
+    instance = new CloudmersiveBarcodeapiClient.BarcodeAdvancedResultItem();
   });
 
   var getProperty = function(object, getter, property) {
@@ -49,37 +49,25 @@
       object[property] = value;
   }
 
-  describe('BarcodeScanApi', function() {
-    describe('barcodeScanImage', function() {
-      it('should call barcodeScanImage successfully', function(done) {
-        //uncomment below and update the code to test barcodeScanImage
-        //instance.barcodeScanImage(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+  describe('BarcodeAdvancedResultItem', function() {
+    it('should create an instance of BarcodeAdvancedResultItem', function() {
+      // uncomment below and update the code to test BarcodeAdvancedResultItem
+      //var instane = new CloudmersiveBarcodeapiClient.BarcodeAdvancedResultItem();
+      //expect(instance).to.be.a(CloudmersiveBarcodeapiClient.BarcodeAdvancedResultItem);
     });
-    describe('barcodeScanImageAdvanced', function() {
-      it('should call barcodeScanImageAdvanced successfully', function(done) {
-        //uncomment below and update the code to test barcodeScanImageAdvanced
-        //instance.barcodeScanImageAdvanced(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property rawText (base name: "RawText")', function() {
+      // uncomment below and update the code to test the property rawText
+      //var instane = new CloudmersiveBarcodeapiClient.BarcodeAdvancedResultItem();
+      //expect(instance).to.be();
     });
-    describe('barcodeScanImageAdvancedQR', function() {
-      it('should call barcodeScanImageAdvancedQR successfully', function(done) {
-        //uncomment below and update the code to test barcodeScanImageAdvancedQR
-        //instance.barcodeScanImageAdvancedQR(function(error) {
-        //  if (error) throw error;
-        //expect().to.be();
-        //});
-        done();
-      });
+
+    it('should have the property barcodeType (base name: "BarcodeType")', function() {
+      // uncomment below and update the code to test the property barcodeType
+      //var instane = new CloudmersiveBarcodeapiClient.BarcodeAdvancedResultItem();
+      //expect(instance).to.be();
     });
+
   });
 
 }));

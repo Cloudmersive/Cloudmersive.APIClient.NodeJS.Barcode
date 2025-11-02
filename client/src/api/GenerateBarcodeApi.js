@@ -33,7 +33,7 @@
   /**
    * GenerateBarcode service.
    * @module api/GenerateBarcodeApi
-   * @version 1.2.0
+   * @version 1.3.0
    */
 
   /**
@@ -48,6 +48,61 @@
 
 
     /**
+     * Callback function to receive the result of the generateBarcodeCode128 operation.
+     * @callback module:api/GenerateBarcodeApi~generateBarcodeCode128Callback
+     * @param {String} error Error message, if any.
+     * @param {'Blob'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Generate a EAN-13 code barcode as PNG file
+     * Validates and generate a EAN-13 barcode as a PNG file, a type of 1D barcode
+     * @param {String} value Barcode value to generate from
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.width Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Number} opts.height Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Boolean} opts.includeLabel Optional: show text label on the image of the barcode value, default is true.
+     * @param {module:api/GenerateBarcodeApi~generateBarcodeCode128Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'Blob'}
+     */
+    this.generateBarcodeCode128 = function(value, opts, callback) {
+      opts = opts || {};
+      var postBody = value;
+
+      // verify the required parameter 'value' is set
+      if (value === undefined || value === null) {
+        throw new Error("Missing the required parameter 'value' when calling generateBarcodeCode128");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+        'width': opts['width'],
+        'height': opts['height'],
+        'includeLabel': opts['includeLabel']
+      };
+      var formParams = {
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['application/json', 'text/json', 'application/xml', 'text/xml', 'application/x-www-form-urlencoded'];
+      var accepts = ['application/octet-stream'];
+      var returnType = 'Blob';
+
+      return this.apiClient.callApi(
+        '/barcode/generate/code-128', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the generateBarcodeEAN13 operation.
      * @callback module:api/GenerateBarcodeApi~generateBarcodeEAN13Callback
      * @param {String} error Error message, if any.
@@ -59,10 +114,15 @@
      * Generate a EAN-13 code barcode as PNG file
      * Validates and generate a EAN-13 barcode as a PNG file, a type of 1D barcode
      * @param {String} value Barcode value to generate from
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.width Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Number} opts.height Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Boolean} opts.includeLabel Optional: show text label on the image of the barcode value, default is true.
      * @param {module:api/GenerateBarcodeApi~generateBarcodeEAN13Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.generateBarcodeEAN13 = function(value, callback) {
+    this.generateBarcodeEAN13 = function(value, opts, callback) {
+      opts = opts || {};
       var postBody = value;
 
       // verify the required parameter 'value' is set
@@ -78,6 +138,9 @@
       var collectionQueryParams = {
       };
       var headerParams = {
+        'width': opts['width'],
+        'height': opts['height'],
+        'includeLabel': opts['includeLabel']
       };
       var formParams = {
       };
@@ -106,10 +169,15 @@
      * Generate a EAN-8 code barcode as PNG file
      * Validates and generate a EAN-8 barcode as a PNG file, a type of 1D barcode
      * @param {String} value Barcode value to generate from
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.width Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Number} opts.height Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Boolean} opts.includeLabel Optional: show text label on the image of the barcode value, default is true.
      * @param {module:api/GenerateBarcodeApi~generateBarcodeEAN8Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.generateBarcodeEAN8 = function(value, callback) {
+    this.generateBarcodeEAN8 = function(value, opts, callback) {
+      opts = opts || {};
       var postBody = value;
 
       // verify the required parameter 'value' is set
@@ -125,6 +193,9 @@
       var collectionQueryParams = {
       };
       var headerParams = {
+        'width': opts['width'],
+        'height': opts['height'],
+        'includeLabel': opts['includeLabel']
       };
       var formParams = {
       };
@@ -153,10 +224,14 @@
      * Generate a QR code barcode as PNG file
      * Generate a QR code barcode as a PNG file, a type of 2D barcode which can encode free-form text information
      * @param {String} value QR code text to convert into the QR code barcode
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.width Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Number} opts.height Optional: width of the barcode in pixels.  Minimum value of 10.
      * @param {module:api/GenerateBarcodeApi~generateBarcodeQRCodeCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.generateBarcodeQRCode = function(value, callback) {
+    this.generateBarcodeQRCode = function(value, opts, callback) {
+      opts = opts || {};
       var postBody = value;
 
       // verify the required parameter 'value' is set
@@ -172,6 +247,8 @@
       var collectionQueryParams = {
       };
       var headerParams = {
+        'width': opts['width'],
+        'height': opts['height']
       };
       var formParams = {
       };
@@ -200,10 +277,15 @@
      * Generate a UPC-A code barcode as PNG file
      * Validate and generate a UPC-A barcode as a PNG file, a type of 1D barcode
      * @param {String} value UPC-A barcode value to generate from
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.width Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Number} opts.height Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Boolean} opts.includeLabel Optional: show text label on the image of the barcode value, default is true.
      * @param {module:api/GenerateBarcodeApi~generateBarcodeUPCACallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.generateBarcodeUPCA = function(value, callback) {
+    this.generateBarcodeUPCA = function(value, opts, callback) {
+      opts = opts || {};
       var postBody = value;
 
       // verify the required parameter 'value' is set
@@ -219,6 +301,9 @@
       var collectionQueryParams = {
       };
       var headerParams = {
+        'width': opts['width'],
+        'height': opts['height'],
+        'includeLabel': opts['includeLabel']
       };
       var formParams = {
       };
@@ -247,10 +332,15 @@
      * Generate a UPC-E code barcode as PNG file
      * Validates and generate a UPC-E barcode as a PNG file, a type of 1D barcode
      * @param {String} value UPC-E barcode value to generate from
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.width Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Number} opts.height Optional: width of the barcode in pixels.  Minimum value of 10.
+     * @param {Boolean} opts.includeLabel Optional: show text label on the image of the barcode value, default is true.
      * @param {module:api/GenerateBarcodeApi~generateBarcodeUPCECallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link 'Blob'}
      */
-    this.generateBarcodeUPCE = function(value, callback) {
+    this.generateBarcodeUPCE = function(value, opts, callback) {
+      opts = opts || {};
       var postBody = value;
 
       // verify the required parameter 'value' is set
@@ -266,6 +356,9 @@
       var collectionQueryParams = {
       };
       var headerParams = {
+        'width': opts['width'],
+        'height': opts['height'],
+        'includeLabel': opts['includeLabel']
       };
       var formParams = {
       };

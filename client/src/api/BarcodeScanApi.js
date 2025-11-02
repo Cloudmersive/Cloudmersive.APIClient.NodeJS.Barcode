@@ -16,24 +16,24 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/BarcodeScanQRAdvancedResult', 'model/BarcodeScanResult'], factory);
+    define(['ApiClient', 'model/BarcodeAdvancedScanResult', 'model/BarcodeScanQRAdvancedResult', 'model/BarcodeScanResult'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/BarcodeScanQRAdvancedResult'), require('../model/BarcodeScanResult'));
+    module.exports = factory(require('../ApiClient'), require('../model/BarcodeAdvancedScanResult'), require('../model/BarcodeScanQRAdvancedResult'), require('../model/BarcodeScanResult'));
   } else {
     // Browser globals (root is window)
     if (!root.CloudmersiveBarcodeapiClient) {
       root.CloudmersiveBarcodeapiClient = {};
     }
-    root.CloudmersiveBarcodeapiClient.BarcodeScanApi = factory(root.CloudmersiveBarcodeapiClient.ApiClient, root.CloudmersiveBarcodeapiClient.BarcodeScanQRAdvancedResult, root.CloudmersiveBarcodeapiClient.BarcodeScanResult);
+    root.CloudmersiveBarcodeapiClient.BarcodeScanApi = factory(root.CloudmersiveBarcodeapiClient.ApiClient, root.CloudmersiveBarcodeapiClient.BarcodeAdvancedScanResult, root.CloudmersiveBarcodeapiClient.BarcodeScanQRAdvancedResult, root.CloudmersiveBarcodeapiClient.BarcodeScanResult);
   }
-}(this, function(ApiClient, BarcodeScanQRAdvancedResult, BarcodeScanResult) {
+}(this, function(ApiClient, BarcodeAdvancedScanResult, BarcodeScanQRAdvancedResult, BarcodeScanResult) {
   'use strict';
 
   /**
    * BarcodeScan service.
    * @module api/BarcodeScanApi
-   * @version 1.2.0
+   * @version 1.3.0
    */
 
   /**
@@ -96,6 +96,54 @@
     }
 
     /**
+     * Callback function to receive the result of the barcodeScanImageAdvanced operation.
+     * @callback module:api/BarcodeScanApi~barcodeScanImageAdvancedCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/BarcodeAdvancedScanResult} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Advanced AI scan and recognition of an image of one or more barcodes of any type
+     * Scan an image or photo of a barcode and return the result with enhanced accuracy, particularlly for low quality inputs using Advanced AI.  Supported barcode types include AZTEC, CODABAR, CODE_39, CODE_93, CODE_128, DATA_MATRIX, EAN_8, EAN_13, ITF, MAXICODE, PDF_417, QR_CODE, RSS_14, RSS_EXPANDED, UPC_A, UPC_E, All_1D, UPC_EAN_EXTENSION, MSI, PLESSEY, IMB.  Uses large model AI.  Consumes 100 API calls per image page.  For Managed Instance and Private Cloud requires GPU infrastructure.  Supports PNG, PDF and JPEG input file formats.
+     * @param {File} imageFile Image file to perform the operation on.  Common file formats such as PNG, JPEG are supported.
+     * @param {module:api/BarcodeScanApi~barcodeScanImageAdvancedCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/BarcodeAdvancedScanResult}
+     */
+    this.barcodeScanImageAdvanced = function(imageFile, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'imageFile' is set
+      if (imageFile === undefined || imageFile === null) {
+        throw new Error("Missing the required parameter 'imageFile' when calling barcodeScanImageAdvanced");
+      }
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+        'imageFile': imageFile
+      };
+
+      var authNames = ['Apikey'];
+      var contentTypes = ['multipart/form-data'];
+      var accepts = ['application/json', 'text/json', 'application/xml', 'text/xml'];
+      var returnType = BarcodeAdvancedScanResult;
+
+      return this.apiClient.callApi(
+        '/barcode/scan/image/advanced', 'POST',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the barcodeScanImageAdvancedQR operation.
      * @callback module:api/BarcodeScanApi~barcodeScanImageAdvancedQRCallback
      * @param {String} error Error message, if any.
@@ -105,10 +153,11 @@
 
     /**
      * Advanced AI scan and recognition of an image of one or more QR barcodes
-     * Scan an image or photo of a QR barcode and return the result.  Uses AI deep learning to read blurry or low resultion QR barcodes.  Supports PNG and JPEG input file formats.
+     * Scan an image or photo of a QR barcode and return the result.  Uses AI deep learning to read blurry or low resultion QR barcodes.  Supports PNG, PDF and JPEG input file formats.
      * @param {File} imageFile Image file to perform the operation on.  Common file formats such as PNG, JPEG are supported.
      * @param {Object} opts Optional parameters
      * @param {String} opts.preprocessing Optional, preprocessing mode, default is &#39;Auto&#39;.  Possible values are None (no preprocessing of the image), and Auto (automatic image enhancement of the image - including automatic unrotation of the image - before OCR is applied; this is recommended).  Set this to &#39;None&#39; if you do not want to use automatic image unrotation and enhancement.
+     * @param {String} opts.recognitionMode Optional, recognitionMode mode, default is &#39;Advanced&#39;.  Possible values are Advanced, and Advanced2 which provides the most advanced available barcode recognition.
      * @param {module:api/BarcodeScanApi~barcodeScanImageAdvancedQRCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/BarcodeScanQRAdvancedResult}
      */
@@ -129,7 +178,8 @@
       var collectionQueryParams = {
       };
       var headerParams = {
-        'preprocessing': opts['preprocessing']
+        'preprocessing': opts['preprocessing'],
+        'recognitionMode': opts['recognitionMode']
       };
       var formParams = {
         'imageFile': imageFile

@@ -50,6 +50,16 @@
   }
 
   describe('GenerateBarcodeApi', function() {
+    describe('generateBarcodeCode128', function() {
+      it('should call generateBarcodeCode128 successfully', function(done) {
+        //uncomment below and update the code to test generateBarcodeCode128
+        //instance.generateBarcodeCode128(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
     describe('generateBarcodeEAN13', function() {
       it('should call generateBarcodeEAN13 successfully', function(done) {
         //uncomment below and update the code to test generateBarcodeEAN13
