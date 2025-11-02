@@ -1,5 +1,10 @@
 ﻿Remove-Item –path ./client –recurse
-& java -jar swagger-codegen-cli.jar generate -i https://api.cloudmersive.com/swagger/api/barcode -l javascript -o client -c packageconfig.json
+
+Invoke-WebRequest -Uri 'https://api.cloudmersive.com/barcode/docs/v1/swagger' -OutFile '.\barcode-api-swagger.json'
+(Get-Content .\barcode-api-swagger.json).replace('localhost', "api.cloudmersive.com") | Set-Content .\barcode-api-swagger.json
+(Get-Content .\barcode-api-swagger.json -Raw) -replace '"http"','"https"' | Set-Content .\barcode-api-swagger.json -Encoding UTF8
+
+& java -jar swagger-codegen-cli.jar generate -i .\barcode-api-swagger.json -l javascript -o client -c packageconfig.json
 #(Get-Content ./client/package.json).replace('v1', '1.0.1') | Set-Content ./client/package.json
 (Get-Content ./client/src/api/GenerateBarcodeApi.js).replace('var returnType = File;', "var returnType = 'Blob';") | Set-Content ./client/src/api/GenerateBarcodeApi.js
 (Get-Content ./client/package.json).replace('"superagent": "3.5.2"', '"superagent": "3.7.0"') | Set-Content ./client/package.json
